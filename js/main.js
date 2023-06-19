@@ -5,8 +5,8 @@ function encrypt() {
 
     const regexA = new RegExp("a", "gi");
     const regexE = new RegExp("e", "gi");
-    const regexO = new RegExp("o", "gi");
     const regexI = new RegExp("i", "gi");
+    const regexO = new RegExp("o", "gi");
     const regexU = new RegExp("u", "gi");
 
     let regexArray = [regexA, regexE, regexI, regexO, regexU]
@@ -27,9 +27,39 @@ function encrypt() {
         modifiedText += currentChar;
     }
 
-
     const encryptedText = document.createElement("p");
     encryptedText.innerHTML= modifiedText;
     encryptedTextContainer.appendChild(encryptedText);
 
+}
+
+
+function decrypt() {
+    console.log("Decrypting...")
+    const encryptedText = document.getElementById("input-text");
+    const decryptedTextContainer = document.querySelector("#output-text-container");
+    let plainText = encryptedText.value;
+
+    const regexA = new RegExp("ai", "gi");
+    const regexE = new RegExp("enter", "gi");
+    const regexI = new RegExp("imes", "gi");
+    const regexO = new RegExp("ober", "gi");
+    const regexU = new RegExp("ufat", "gi");
+
+    let regexArray = [regexA, regexE, regexI, regexO, regexU]
+    let decryptedArray = ["a", "e", "i", "o", "u"]
+
+
+    plainText = plainText.replace(regexArray[0], decryptedArray[0])
+    plainText = plainText.replace(regexArray[1], decryptedArray[1])
+    plainText = plainText.replace(regexArray[2], decryptedArray[2])
+    plainText = plainText.replace(regexArray[3], decryptedArray[3])
+    plainText = plainText.replace(regexArray[4], decryptedArray[4])
+
+    console.log(regexA.test(plainText))
+
+    const decryptedText = document.createElement("p");
+    decryptedText.innerHTML= plainText;
+    decryptedTextContainer.appendChild(decryptedText);
+    
 }
