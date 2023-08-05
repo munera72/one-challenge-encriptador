@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="js/main.js"></script>
 
     <!-- Font imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,9 @@
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+
     <title>Encrypt</title>
+
 </head>
 <body>
     <header>
@@ -24,24 +27,29 @@
     <main>
         <div id="input-area-div">
             <div id="textbox-div">
-                <textarea name="" id="textbox" cols="30" rows="10" placeholder="Enter your text here"></textarea>
+                <textarea id="textbox" cols="30" rows="10" placeholder="Enter your text here"></textarea>
                 <div id="disclaimer">
                     
                     <img src="img/bi_exclamation-circle-fill-1.png" alt="Warning sign in grey">
 
-                    <p>Only lowercase, no special characters or stresses.</p>
+                    <p>Only lowercase, no special characters.</p>
                 </div>
             </div>
             <div id="buttons-div">
-                <button class="btn" id="encrypt-btn">Encrypt</button>
-                <button class="btn" id="decrypt-btn">Decrypt</button>
+                <button onclick="encrypt()" class="btn" id="encrypt-btn">Encrypt</button>
+                <button onclick="decrypt()" class="btn" id="decrypt-btn">Decrypt</button>
             </div>
         </div>
         <div id="output-div">
             <div id="output-display">
-                <img src="img/Muñeco.png" alt="">
-                <h3>Ningún mensaje fue encontrado</h3>
-                <p>Ingresa el mensaje que desees encriptar o desencriptar</p>
+                <div id="no-message-display">
+                    <img src="img/Muñeco.png" alt="">
+                    <h3>Ningún mensaje fue encontrado</h3>
+                    <p>Ingresa el mensaje que desees encriptar o desencriptar</p>
+                </div>
+                <div id="message-display-div">
+                    <p id="message-display"></p>
+                </div>
             </div>
         </div>
     </main>

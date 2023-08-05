@@ -1,6 +1,7 @@
 function encrypt() {
-    const plainText = document.getElementById("input-text");
-    const encryptedTextContainer = document.querySelector("#output-text-container");
+    const plainText = document.getElementById("textbox");
+
+    const encryptedTextContainer = document.querySelector("#message-display");
     let modifiedText = "";
 
     const regexA = new RegExp("a", "gi");
@@ -27,17 +28,21 @@ function encrypt() {
         modifiedText += currentChar;
     }
 
-    const encryptedText = document.createElement("p");
-    encryptedText.innerHTML= modifiedText;
-    encryptedTextContainer.appendChild(encryptedText);
+    document.getElementById("output-div").style.justifyContent = "flex-start"
+    
+    document.getElementById("no-message-display").style.display = "none";
+    
+    encryptedTextContainer.style.wordBreak = "break-all"
+    
+    encryptedTextContainer.innerHTML= modifiedText;
 
 }
 
 
 function decrypt() {
     console.log("Decrypting...")
-    const encryptedText = document.getElementById("input-text");
-    const decryptedTextContainer = document.querySelector("#output-text-container");
+    const encryptedText = document.getElementById("textbox");
+    const decryptedTextContainer = document.querySelector("#message-display");
     let plainText = encryptedText.value;
 
     const regexA = new RegExp("ai", "gi");
@@ -58,8 +63,14 @@ function decrypt() {
 
     console.log(regexA.test(plainText))
 
-    const decryptedText = document.createElement("p");
-    decryptedText.innerHTML= plainText;
-    decryptedTextContainer.appendChild(decryptedText);
+    document.getElementById("output-div").style.justifyContent = "flex-start"
+    
+    document.getElementById("no-message-display").style.display = "none";
+    
+    decryptedTextContainer.style.wordBreak = "keep-all"
+
+    decryptedTextContainer.innerHTML= plainText;
+
+
     
 }

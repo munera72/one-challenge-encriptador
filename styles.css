@@ -120,6 +120,10 @@ main {
 }
 
 #output-div {
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    padding: 5px 3px 5px 3px;
+
     height: 200px;
     width: 90%;
     margin: auto;
@@ -135,11 +139,11 @@ main {
     padding: 40px 20px 40px 20px;
 }
 
-#output-display img {
+#output-display #no-message-display img {
     display: none;
 }
 
-#output-display h3{
+#output-display #no-message-display h3{
     font-family: 'Inter';
     font-weight: 700;
     font-size: 24px;
@@ -147,11 +151,19 @@ main {
     margin: 0 0 10px 0;
 }
 
-#output-display p{
+#output-display #no-message-display p{
     font-family: 'Inter';
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+}
+
+#message-display {
+    display: inline-block;
+    font-size: 35px;
+    text-align: justify;
+    max-height: 90%;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -209,7 +221,7 @@ main {
         justify-content: center;
     }
 
-    #output-display img{
+    #output-display #no-message-display img{
         display: inline-block;
         width: 100%;
     }
